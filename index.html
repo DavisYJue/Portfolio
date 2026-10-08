@@ -25,6 +25,9 @@
           <a href="#about-me" class="hover:text-gray-500">About Me</a>
           <a href="#my-skills" class="hover:text-gray-500">Skills</a>
           <a href="#my-projects" class="hover:text-gray-500">Projects</a>
+          <a href="#top-shopify-section" class="hover:text-gray-500"
+            >Sections</a
+          >
           <a href="#contact-me" class="hover:text-gray-500">Contact Me</a>
         </ul>
       </nav>
@@ -109,6 +112,15 @@
             >Project</a
           >
         </li>
+
+        <li>
+          <a
+            href="#top-shopify-section"
+            class="block py-2 px-3 text-white rounded-lg hover:bg-gray-700"
+            >Sections</a
+          >
+        </li>
+
         <li>
           <a
             href="#contact-me"
@@ -482,7 +494,7 @@
               an AI-assisted learning management system using
               Retrieval-Augmented Generation, a hospital database management
               system, and a road data viewer for Guangzhou. I usually work with
-              JavaScript, React, and Git, and I like learning by doing — each
+              JavaScript, Next.js, and Git, and I like learning by doing — each
               project pushes me to get more confident and capable as a
               developer.
             </p>
@@ -522,8 +534,8 @@
                 locally-hosted DeepSeek model to answer student and teacher
                 questions grounded in uploaded course materials and the LMS
                 manual, on top of existing features like assignments, materials,
-                and grading. Built with React on the frontend and a Python-based
-                RAG pipeline on the backend.
+                and grading. Built with Next.js on the frontend and a
+                Python-based RAG pipeline on the backend.
               </p>
               <a href="https://github.com/DavisYJue/cloud-lms" target="_blank"
                 ><img
@@ -590,8 +602,8 @@
                 Included an interactive map to display selected roads and
                 district boundaries, helping users understand their location and
                 layout. Selected roads remain highlighted across filters and
-                page changes. Built with Next.js, React, and Leaflet, using
-                GeoJSON data for roads and district boundaries.
+                page changes. Built with Next.js and Leaflet, using GeoJSON data
+                for roads and district boundaries.
               </p>
               <a
                 href="https://github.com/DavisYJue/GuangzhouRoadsLibrary"
@@ -607,6 +619,443 @@
           </div>
         </div>
       </div>
+
+      <!-- Top Shopify Custom Section -->
+      <style>
+        .top-shopify-section img {
+          cursor: zoom-in !important;
+        }
+
+        .section-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+          .section-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+        }
+
+        .section-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .section-item.is-hidden {
+          display: none;
+        }
+
+        .section-item .thumb {
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          border-radius: 1rem;
+        }
+
+        .section-item .thumb img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .section-item .caption {
+          text-align: center;
+          font-weight: 700;
+        }
+
+        #show-more-btn {
+          padding: 14px 40px;
+          font-size: 1rem;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          color: #fff;
+          background: #000;
+          border: 0;
+          border-radius: 9999px;
+          cursor: pointer;
+        }
+
+        #img-popup {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          z-index: 2147483647;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 60px;
+          background: rgba(0, 0, 0, 0.85);
+          cursor: zoom-out;
+        }
+
+        #img-popup.open {
+          display: flex;
+        }
+
+        #img-popup img {
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          border-radius: 1rem;
+          cursor: zoom-out !important;
+        }
+
+        #img-popup .close-x {
+          position: absolute;
+          top: 12px;
+          right: 24px;
+          font-size: 40px;
+          line-height: 1;
+          color: #fff;
+        }
+
+        @media (max-width: 768px) {
+          #img-popup {
+            padding: 24px;
+          }
+        }
+      </style>
+
+      <div id="img-popup">
+        <span class="close-x">&times;</span>
+        <img src="" alt="" />
+      </div>
+
+      <div
+        class="top-shopify-section flex flex-col px-7 lg:px-25 pt-10 pb-15 lg:py-15 lg:pb-0 gap-10 lg:gap-20"
+        id="top-shopify-section"
+      >
+        <p class="lg:text-6xl text-4xl text-center">
+          My <span class="font-bold">Custom Shopify Section</span>
+        </p>
+
+        <div class="flex flex-col gap-10">
+          <div class="section-grid">
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Popup Notice Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Testimonial Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_4.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">FAQ Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_3.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Store Locater Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_5-1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Download Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_5-2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Download Section Popup</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_6-1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Top Features Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_6-2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Explore All Features Section
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_7.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Custom JudgeMe Review Section
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Teevo_Section_8.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Track Order Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_1-1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Multi-CTA-Button Banner Section
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_1-2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Multi-CTA-Button Banner Section (Mobile)
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_2-1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Grid Banner Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_2-2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Grid Banner Section (Mobile)
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_3-1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Carousel Banner Section
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_3-2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Carousel Banner Section (Mobile)
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_4.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                Carousel with CTA Button Section
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_5.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">
+                3-Cards (With or Without Icon) Section
+              </p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_6.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Benefit Table Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_7.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">FAQ Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_8.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Policy Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_9.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">2-Cards Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_10-1.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Search-Bar Section</p>
+            </div>
+
+            <div class="section-item">
+              <div class="thumb">
+                <img
+                  src="./assets/Fantech_Section_10-2.jpg"
+                  alt="Shopify Liquid Section"
+                />
+              </div>
+              <p class="caption text-2xl lg:text-4xl">Search Result Section</p>
+            </div>
+          </div>
+
+          <div style="text-align: center">
+            <button id="show-more-btn" type="button">SHOW MORE</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var INITIAL = 6;
+          var BATCH = 999;
+
+          var items = document.querySelectorAll(".section-item");
+          var moreBtn = document.getElementById("show-more-btn");
+          var shown = INITIAL;
+
+          function update() {
+            items.forEach(function (item, i) {
+              item.classList.toggle("is-hidden", i >= shown);
+            });
+            if (shown >= items.length) {
+              moreBtn.parentElement.style.display = "none";
+            }
+          }
+
+          moreBtn.addEventListener("click", function () {
+            shown += BATCH;
+            update();
+          });
+
+          update();
+
+          var popup = document.getElementById("img-popup");
+          var popupImg = popup.querySelector("img");
+
+          function close() {
+            popup.classList.remove("open");
+            popupImg.src = "";
+            document.body.style.overflow = "";
+          }
+
+          document.addEventListener("click", function (e) {
+            var img = e.target.closest(".top-shopify-section img");
+            if (img) {
+              popupImg.src = img.currentSrc || img.src;
+              popupImg.alt = img.alt;
+              popup.classList.add("open");
+              document.body.style.overflow = "hidden";
+            }
+          });
+
+          popup.addEventListener("click", close);
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") close();
+          });
+        })();
+      </script>
 
       <!-- Testimonials -->
       <!-- <div
